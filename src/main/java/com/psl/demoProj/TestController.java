@@ -12,4 +12,9 @@ public class TestController {
 	public String firstHandler() {
 		return "Just checking";
 	}
+	
+	@RequestMapping("/home")
+	public String homeHandler() {
+		return "Home page";
+	}
 }
