@@ -17,4 +17,11 @@ public class TestController {
 	public String homeHandler() {
 		return "Home page";
 	}
+	
+	@RequestMapping("/about")
+	public String aboutHandler() {
+		return "about page";
+	}
+	
+	
 }
