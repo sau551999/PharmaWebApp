@@ -1,22 +1,47 @@
 package com.psl.modal;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class Products {
 	private int id;
 	private String name;
 	private String category;
 	private int price;
 	private int stock;
+	private ArrayList<HashMap<String,String>> reviews;
+	private String seller;
+	
 	
 	public Products() {
 		
 	}
-	public Products(int id, String name, String category, int price, int stock) {
+	public Products( String name, String category, int price, int stock,String seller, ArrayList<HashMap<String,String>> reviews) {
 		super();
-		this.id = id;
+		
 		this.name = name;
 		this.category = category;
 		this.price = price;
 		this.stock = stock;
+		this.seller =seller;
+		this.reviews =reviews;
+	}
+	@Override
+	public String toString() {
+		return "Products [id=" + id + ", name=" + name + ", category=" + category + ", price=" + price + ", stock="
+				+ stock + ", reviews=" + reviews + ", seller=" + seller + "]";
+	}
+	public ArrayList<HashMap<String, String>> getReviews() {
+		return reviews;
+	}
+	public void setReviews(ArrayList<HashMap<String, String>> reviews) {
+		this.reviews = reviews;
+	}
+	public String getSeller() {
+		return seller;
+	}
+	public void setSeller(String seller) {
+		this.seller = seller;
 	}
 	public int getId() {
 		return id;
