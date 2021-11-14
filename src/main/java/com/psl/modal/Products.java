@@ -1,22 +1,38 @@
 package com.psl.modal;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "Products")
 public class Products {
+	@Id
+	@Column(name = "id")
+	@GeneratedValue (strategy= GenerationType.AUTO)
 	private int id;
+	@Column(name = "name")
+	
 	private String name;
+	@Column(name = "category")
 	private String category;
+	@Column(name = "price")
 	private int price;
+	@Column(name = "stock")
 	private int stock;
-	private ArrayList<HashMap<String,String>> reviews;
+	@Column(name = "stars")
+	private int stars;
+	@Column(name = "seller")
 	private String seller;
 	
 	
 	public Products() {
 		
 	}
-	public Products( String name, String category, int price, int stock,String seller, ArrayList<HashMap<String,String>> reviews) {
+	public Products( String name, String category, int price, int stock,String seller,int stars) {
 		super();
 		
 		this.name = name;
@@ -24,19 +40,9 @@ public class Products {
 		this.price = price;
 		this.stock = stock;
 		this.seller =seller;
-		this.reviews =reviews;
+		this.stars =stars;
 	}
-	@Override
-	public String toString() {
-		return "Products [id=" + id + ", name=" + name + ", category=" + category + ", price=" + price + ", stock="
-				+ stock + ", reviews=" + reviews + ", seller=" + seller + "]";
-	}
-	public ArrayList<HashMap<String, String>> getReviews() {
-		return reviews;
-	}
-	public void setReviews(ArrayList<HashMap<String, String>> reviews) {
-		this.reviews = reviews;
-	}
+	
 	public String getSeller() {
 		return seller;
 	}
@@ -73,4 +79,12 @@ public class Products {
 	public void setStock(int stock) {
 		this.stock = stock;
 	}
+	public int getStars() {
+		return stars;
+	}
+	public void setStars(int stars) {
+		this.stars = stars;
+	}
+	
+	
 }
